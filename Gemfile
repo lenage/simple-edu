@@ -4,9 +4,9 @@ gem "sinatra"
 gem "slim"
 gem 'thin'
 gem 'sequel'
-gem 'sinatra-sequel'
 
 group :development, :test do
+  gem 'pry'
   gem 'sqlite3'
   gem 'rspec'
 end
