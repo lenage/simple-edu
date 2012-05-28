@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    meta http-equiv="Content-Type" content="text/html; charset=utf-8"
+    title = settings.title
+    meta name="keywords" content="website"
+    link href='/bootstrap/css/bootstrap.min.css' media='screen' rel='stylesheet' type='text/css'
+    link href='/css/style.css' rel="stylesheet" type='text/css'
+    script src="/bootstrap/js/boostrap.min.js" type="text/javascript"
+    / == meta_csrf
+    / == js :application
+    / == css :application
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          .brand
+            = settings.title
+    #content.container
+      - if @error
+        .alert.alert-error
+          = @error
+      == yield

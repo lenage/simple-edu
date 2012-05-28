@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ## init database
 require './database/init'
 require 'pry'
@@ -7,7 +8,8 @@ if %w(test development).include?(settings.environment.to_s)
   require 'pry'
 end
 
+set :title, "新阅读实验室"
+
 get '/' do
-  @users = Sequel.connect(settings.database)[:users].all
-  slim :index, :locals => { :users => @users }
+  slim :index
 end
