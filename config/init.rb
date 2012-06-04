@@ -1,7 +1,7 @@
 require 'sequel'
 
 configure :development, :test do
-  set :database, 'sqlite://database/dev.db'
+  set :database, 'sqlite://dev.db'
 end
 
 configure :production do

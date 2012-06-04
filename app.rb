@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
+require "rubygems"
+require "bundler/setup"
+require "sinatra"
+require "slim"
+require "thin"
+
 ## init database
-require './database/init'
+require './config/init'
 
 ##load debug tools
 if %w(test development).include?(settings.environment.to_s)
