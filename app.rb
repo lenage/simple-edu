@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-require "rubygems"
+require 'rubygems'
 require "bundler/setup"
-require "sinatra"
-require "slim"
-require "thin"
-
-## init database
+Bundler.require
 require './config/init'
 
 ##load debug tools
@@ -16,5 +12,9 @@ end
 set :title, "新阅读实验室"
 
 get '/' do
-  slim :index
+  @posts = Post.all
+  slim :'home/index'
+end
+
+get '/blog/new' do
 end
